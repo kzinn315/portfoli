@@ -1,0 +1,338 @@
+/* Importação de fontes (ex: Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #e60000; /* Vermelho vibrante */
+    --secondary-color: #2c3e50; /* Cinza escuro/Quase preto para fundos claros */
+    --dark-background: #1a1a1a; /* Preto mais intenso para fundos principais */
+    --text-color-light: #ecf0f1; /* Texto claro para fundos escuros */
+    --text-color-dark: #333; /* Texto escuro para contraste em elementos claros */
+    --border-color: #444; /* Borda sutil para elementos escuros */
+}
+
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light); /* Cor do texto principal */
+    background-color: var(--dark-background); /* Fundo principal escuro */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light { /* Usado para seções que contrastam com o fundo principal */
+    background-color: var(--dark-background); /* Fundo cinza escuro */
+    color: var(--text-color-light); /* Texto claro para essas seções */
+}
+
+h1, h2, h3 {
+    color: #e60000; /* Títulos em vermelho */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-color-light); /* Padrão de texto para fundo escuro */
+}
+
+/* Ajuste para parágrafos em seções de fundo mais claro (secondary-color) */
+.bg-light p {
+    color: var(--text-color-light);
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #e60000;
+    color: var(--text-color-light);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #e60000; /* Tom mais escuro do vermelho */
+}
+
+/* Header */
+header {
+    background-color: var(--dark-background); /* Fundo do cabeçalho escuro */
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #e60000; /* Borda vermelha */
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin: 0;
+    color: var(--text-color-light); /* Nome do site em branco/claro */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-light); /* Links da navegação em branco/claro */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #e60000; /* Hover dos links em vermelho */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imagens/hero-background.jpg') no-repeat center center/cover;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #e60000; /* Título principal em vermelho */
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--text-color-light);
+}
+
+/* Serviços */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.servico-item {
+    background-color: var(--dark-background); /* Fundo dos cards de serviço */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.servico-item:hover {
+    transform: translateY(-5px);
+    background-color: #000000; /* Um pouco mais claro no hover */
+}
+
+.servico-item h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #e60000; /* Títulos dos serviços em vermelho */
+}
+
+.servico-item p {
+    font-size: 1.05em;
+    color: var(--text-color-light); /* Texto dos serviços em branco/claro */
+}
+
+/* Galeria */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent; /* Borda transparente inicial */
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.03);
+    border: 2px solid #e60000; /* Borda vermelha no hover */
+}
+
+/* Depoimentos */
+.depoimentos-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.depoimento-item {
+    flex: 0 0 auto;
+    width: 450px;
+    background-color: var(--dark-background); /* Fundo dos depoimentos */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    scroll-snap-align: start;
+    border: 1px solid var(--border-color);
+}
+
+.depoimento-item p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: var(--text-color-light); /* Texto do depoimento em branco/claro */
+}
+
+.depoimento-item span {
+    font-weight: 600;
+    color: #e60000; /* Nome do cliente em vermelho */
+}
+
+/* Contato */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color); /* Borda escura */
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    background-color: #333; /* Fundo dos campos escuro */
+    color: var(--text-color-light); /* Texto digitado claro */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #999; /* Placeholder um pouco mais claro */
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--text-color-light); /* Informações de contato claras */
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-background); /* Fundo do rodapé escuro */
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-area {
+        margin-bottom: 20px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .servicos-grid,
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .depoimento-item {
+        width: 90%;
+    }
+}
